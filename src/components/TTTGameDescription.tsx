@@ -1,5 +1,5 @@
-import { GameState } from "../types/GameState";
 import { StyleSheet, Text, View } from "react-native";
+import { GameState } from "../types/GameState";
 
 const getDescriptionForGameState = (
   gameState: GameState,
@@ -8,15 +8,15 @@ const getDescriptionForGameState = (
 ) => {
   switch (gameState) {
     case GameState.ACTION_PLAYER1:
-      return `${player1}, du bist dran`;
+      return `${player1}, it's your turn`;
     case GameState.ACTION_PLAYER2:
-      return `${player2}, du bist dran`;
+      return `${player2}, it's your turn`;
     case GameState.DRAW:
-      return "Spiel vorbei! Unentschieden!";
+      return "Game over! Draw!";
     case GameState.WON_PLAYER1:
-      return `${player1}, du hast gewonnen`;
+      return `${player1}, you won`;
     case GameState.WON_PLAYER2:
-      return `${player2}, du hast gewonnen`;
+      return `${player2}, you won`;
     default:
       return "";
   }

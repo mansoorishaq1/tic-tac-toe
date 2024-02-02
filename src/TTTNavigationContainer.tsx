@@ -1,8 +1,8 @@
-import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
-import TTTHomeScreen from "./screens/Home/TTTHomeScreen";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import React from "react";
 import TTTGameScreen from "./screens/Game/TTTGameScreen";
+import TTTHomeScreen from "./screens/Home/TTTHomeScreen";
 
 export type NavigatorParamList = {
   home: undefined;
@@ -17,7 +17,7 @@ const TTTNavigationContainer = () => {
       <RootStack.Navigator>
         <RootStack.Screen
           name="home"
-          options={{ headerTitle: "Neues Spiel" }}
+          options={{ headerTitle: "New game" }}
           component={TTTHomeScreen}
         />
         <RootStack.Screen

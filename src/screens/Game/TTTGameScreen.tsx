@@ -1,14 +1,13 @@
-import { FC } from "react";
-import { NavigatorParamList } from "../../TTTNavigationContainer";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { View, Text, Button } from "react-native";
-import TTTHeadline from "../../components/TTTHeadline";
-import TTTGameField from "../../components/TTTGameField";
-import useGame from "../../hooks/useGame";
-import GameContext from "../../contexts/GameContext";
-import { GameState } from "../../types/GameState";
-import { isGameGameFinished } from "../../services/GameService";
+import { FC } from "react";
+import { Button, View } from "react-native";
+import { NavigatorParamList } from "../../TTTNavigationContainer";
 import TTTGameDescription from "../../components/TTTGameDescription";
+import TTTGameField from "../../components/TTTGameField";
+import TTTHeadline from "../../components/TTTHeadline";
+import GameContext from "../../contexts/GameContext";
+import useGame from "../../hooks/useGame";
+import { isGameGameFinished } from "../../services/GameService";
 
 const TTTGameScreen: FC<NativeStackScreenProps<NavigatorParamList, "game">> = ({
   route,
@@ -29,7 +28,7 @@ const TTTGameScreen: FC<NativeStackScreenProps<NavigatorParamList, "game">> = ({
           gameState={currentGameState}
         />
         {isGameGameFinished(currentGameState) && (
-          <Button title={"Nochmal Spielen"} onPress={startNewGame} />
+          <Button title={"Play again"} onPress={startNewGame} />
         )}
       </GameContext.Provider>
     </View>
